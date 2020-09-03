@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathias Yde Studieweb</title>
+  <title>Document</title>
   <link rel="stylesheet" href="style/tailwind.css">
   <link rel="stylesheet" href="style/light_theme.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -11,26 +11,17 @@
 <body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
   <div id="root">
     <navigationbar></navigationbar>
-  
     <div class="flex-1">
-      <img src="images/mathias_yde.jpg" class="absolute left-1/2 transform -translate-x-1/2 translate-y-1/2 rounded-full w-48 object-cover">
-      <img src="images/htx_building.jpg" class="w-full h-48 object-center object-cover">
-    </div>
-  
-  
-    <div class="container mx-auto my-32 flex-1 rounded color-pureprimary">
-      <main class="flex-1 p-4 h-full w-auto shadow-rl">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolorem.
-
-        <p v-for="(item, index) in assignments">
-          {{item.title}}
-        </p>
-      </main>
+      <div id="assignments-container" class="container mx-auto py-4 grid grid-flow-row grid-cols-2 gap-4">
+        <div v-for="(assignment, index) in assignments" class="color-pureprimary h-64 rounded hover:shadow-lg transition-shadow duration-200">
+          {{assignment.title}}
+        </div>
+      </div>
     </div>
   </div>
 
-  <script src="lib/vue.js"></script>
-  <script src="components/navigation_bar.js"></script>
+  <script src="./lib/vue.js"></script>
+  <script src="./components/navigation_bar.js"></script>
   <script>
     let https = new XMLHttpRequest();
     https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/assignments.json", false);
@@ -40,8 +31,8 @@
       el: "#root",
       data: {
         assignments: JSON.parse(https.response),
-      },
-    })
+      }
+    });
   </script>
 </body>
 </html>
