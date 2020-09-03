@@ -1,0 +1,17 @@
+@import "tailwind.css";
+
+.color-pureprimary {
+  @apply bg-white;
+}
+
+.color-offprimary {
+  @apply bg-gray-200;
+}
+
+.color-textdark {
+  @apply text-gray-900;
+}
+
+.color-textlight {
+  @apply text-gray-100;
+}
