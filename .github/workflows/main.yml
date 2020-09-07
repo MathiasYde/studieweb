@@ -1,5 +1,5 @@
 on: push
-name: Publish files to HTX server
+name: Publish files to HTX student server
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
