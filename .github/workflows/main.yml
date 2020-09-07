@@ -3,7 +3,7 @@ name: Publish files to HTX server
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
       with:
