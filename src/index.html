@@ -17,8 +17,13 @@
       <img src="images/htx_building.jpg" class="w-full h-48 object-center object-cover">
     </div>
   
-  
-    <div class="container mx-auto my-32 flex-1 rounded color-pureprimary">
+    <main class="container mx-auto">
+      <infocard>
+        <p>gay</p>
+      </infocard>
+    </main>
+
+    <!-- <div class="container mx-auto my-32 flex-1 rounded color-pureprimary">
       <main class="flex-1 p-4 h-full w-auto shadow-rl">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolorem.
 
@@ -26,11 +31,12 @@
           {{item.title}}
         </p>
       </main>
-    </div>
+    </div> -->
   </div>
 
   <script src="lib/vue.js"></script>
   <script src="components/navigation_bar.js"></script>
+  <script src="components/info_card.js"></script>
   <script>
     let https = new XMLHttpRequest();
     https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/assignments.json", false);
