@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="../style/tailwind.css">
+  <link rel="stylesheet" href="../style/light_theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <ul id="root">
+    <li v-for="assignment in assignments">
+      {{assignment.title}}
+    </li>
+  </ul>
+
+  <script src="../lib/vue.js"></script>
+  <script>
+    let https = new XMLHttpRequest();
+    https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/assignments.json", false);
+    https.send(null);
+
+    new Vue({
+      el: "#root",
+      data: {
+        assignments: JSON.parse(https.response),
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

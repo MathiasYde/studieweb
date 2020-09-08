@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="style/tailwind.css">
+  <link rel="stylesheet" href="style/light_theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
+  <div id="root">
+    <navigationbar></navigationbar>
+  </div>
+
+  <script src="lib/vue.js"></script>
+  <script src="components/navigation_bar.js"></script>
+  <script>
+    try {
+      let https = new XMLHttpRequest();
+      https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/log.json", false);
+      https.send(null);
+      let data = JSON.parse(https.response)
+    } catch {
+      let data = null
+    }
+
+    new Vue({
+      el: "#root",
+      data: {
+        entries: data,
+      }
+    })
+  </script>
+</body>
+
+</html>

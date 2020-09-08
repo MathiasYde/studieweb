@@ -1,0 +1,7 @@
+@import "tailwind.css";
+
+.color-purewhite {
+  --bg-opacity: 1;
+  background-color: #9b2c2c;
+  background-color: rgba(155, 44, 44, var(--bg-opacity));
+}
