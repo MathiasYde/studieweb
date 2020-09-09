@@ -12,7 +12,7 @@
   <div id="root">
     <navigationbar></navigationbar>
     <div class="flex-1">
-      <div id="assignments-container" class="container mx-auto py-4 grid grid-flow-row grid-cols-2 gap-4">
+      <div id="assignments-container" class="container mx-auto py-4 grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4">
         <button @click="navigate(assignment['href'])" v-for="(assignment, index) in assignments" class="relative color-pureprimary h-64 rounded hover:shadow-lg transition-shadow duration-200">
           <p class="absolute top-0 inset-x-0 mt-2 text-gray-500 text-sm">{{assignment.subject}}</p>
 
