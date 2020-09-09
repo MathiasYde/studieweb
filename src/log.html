@@ -13,25 +13,45 @@
 
 <body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
   <div id="root">
-    <navigationbar></navigationbar>
+    <div v-if="entries != null">
+      <navigationbar></navigationbar>
+
+      <div class="container mx-auto">
+        <div v-for="(entry, index) in entries" class="rounded my-4 p-4 color-pureprimary">
+          <div class="flex justify-between">
+            <p class="font-bold text-xl">{{entry.title}}</p>
+            <p class="text-gray-500">{{entry.date}}</p>
+          </div>
+
+          <p v-for="paragraph in entry.content">{{paragraph}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="entries == null" class="color-pureprimary mx-auto my-48 h-48 w-80 shadow-lg rounded-lg p-8 text-center">
+      <p class="font-bold text-md">Noget gik gruesomt galt!</p>
+      <p>Hvis du ser dette, så kontakt mig med det samme.</p>
+      <p class="mt-4">Lectio ID: Mathias Ransgaard Yde (Kappa 13)</p>
+    </div>
   </div>
 
   <script src="lib/vue.js"></script>
   <script src="components/navigation_bar.js"></script>
   <script>
+    let entries = null;
     try {
       let https = new XMLHttpRequest();
       https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/log.json", false);
       https.send(null);
-      let data = JSON.parse(https.response)
+      entries = JSON.parse(https.response);
     } catch {
-      let data = null
+      console.log("Could not fetch log entries");
     }
 
     new Vue({
       el: "#root",
       data: {
-        entries: data,
+        entries: entries,
       }
     })
   </script>

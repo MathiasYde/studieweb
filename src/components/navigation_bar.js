@@ -16,9 +16,9 @@ Vue.component("navigationbar", {
     }
   },
   template: `
-    <nav class="flex print:hidden p-4 justify-between border-b color-pureprimary">
+    <nav class="flex flex-col sm:flex-row print:hidden p-4 justify-between border-b color-pureprimary">
       <a @click="navigate('index.html')" class="cursor-pointer font-black text-lg">Mathias Yde</a>
-      <div>
+      <div class="flex-row">
         <a v-for="link in links" @click="navigate(link.href)" class="cursor-pointer p-2 ml-2 hover:shadow-lg transition-shadow duration-200 rounded">{{link.title}}</a>
       </div>
     </nav>   

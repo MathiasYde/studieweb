@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,19 @@
   <link rel="stylesheet" href="style/light_theme.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
-  <div id="root">
-    <navigationbar></navigationbar>
-  
+  <div id="root" class="h-full">
+    <div v-if="assignments != null">
+      <navigationbar></navigationbar>
+
     <div class="flex-1">
-      <img src="images/mathias_yde.jpg" class="absolute left-1/2 transform -translate-x-1/2 translate-y-1/2 rounded-full w-48 object-cover">
+      <img src="images/mathias_yde.jpg"
+        class="absolute left-1/2 transform -translate-x-1/2 translate-y-1/2 rounded-full w-48 object-cover">
       <img src="images/htx_building.jpg" class="w-full h-48 object-center object-cover">
     </div>
-  
-    <main class="container mx-auto">
-      <infocard>
-        <p>gay</p>
-      </infocard>
-    </main>
 
-    <!-- <div class="container mx-auto my-32 flex-1 rounded color-pureprimary">
+    <div class="container mx-auto my-32 flex-1 rounded color-pureprimary">
       <main class="flex-1 p-4 h-full w-auto shadow-rl">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolorem.
 
@@ -31,23 +29,39 @@
           {{item.title}}
         </p>
       </main>
-    </div> -->
+    </div>
+    </div>
+
+
+    <div v-if="assignments == null" class="color-pureprimary mx-auto my-48 h-48 w-80 shadow-lg rounded-lg p-8 text-center">
+      <p class="font-bold text-md">Noget gik gruesomt galt!</p>
+      <p>Hvis du ser dette, så kontakt mig med det samme.</p>
+      <p class="mt-4">Lectio ID: Mathias Ransgaard Yde (Kappa 13)</p>
+    </div>
   </div>
 
   <script src="lib/vue.js"></script>
   <script src="components/navigation_bar.js"></script>
   <script src="components/info_card.js"></script>
   <script>
-    let https = new XMLHttpRequest();
-    https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/assignments.json", false);
-    https.send(null);
+    let assignments = null;
+    try {
+      let https = new XMLHttpRequest();
+      https.open("GET", "https://raw.githubusercontent.com/MathiasYde/studieweb/master/src/data/assignments.json", false);
+      https.send(null);
+
+      assignments = JSON.parse(https.responseText);
+    } catch {
+      console.log("Could not fetch assignments");
+    }
 
     new Vue({
       el: "#root",
       data: {
-        assignments: JSON.parse(https.response),
+        assignments: assignments,
       },
     })
   </script>
 </body>
+
 </html>

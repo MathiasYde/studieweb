@@ -4,8 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <link rel="stylesheet" href="style/tailwind.css">
+  <link rel="stylesheet" href="style/light_theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
-  bruh
+<body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
+  <div id="root" class="h-full">
+    <navigationbar></navigationbar>
+
+    <div class="container mx-auto p-4 h-full color-pureprimary">
+
+      <section>
+        <h1 class="font-bold text-xl">Definer “Usability”</h1>
+        <p>
+          Usability beskriver hvor nemt og dejligt det er at bruge en hjemmeside.
+        </p>
+        <p>
+          Hvis en hjemmeside har mange distraherende elementer, tekst der er svært at læse, knapper der er for små osv., ville brugere have en dårlig oplevelse med den hjemmeside og efterlade den.
+        </p>
+      </section>
+
+      <section>
+        
+      </section>
+    </div>
+  </div>
+  
+  <script src="./lib/vue.js"></script>
+  <script src="components/navigation_bar.js"></script>
+
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+
+      }
+    })
+  </script>
 </body>
 </html>
