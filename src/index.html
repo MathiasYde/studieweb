@@ -10,30 +10,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
-<body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
+<body class="flex flex-col h-screen font-roboto color-textdark color-offprimary">
   <div id="root" class="h-full">
     <div v-if="assignments != null">
       <navigationbar></navigationbar>
 
     <div class="flex-1">
       <img src="images/mathias_yde.jpg"
-        class="absolute left-1/2 transform -translate-x-1/2 translate-y-1/2 rounded-full w-48 object-cover">
-      <img src="images/htx_building.jpg" class="w-full h-48 object-center object-cover">
+        class="absolute object-cover w-48 transform -translate-x-1/2 translate-y-1/2 rounded-full left-1/2">
+      <img src="images/htx_building.jpg" class="object-cover object-center w-full h-48">
     </div>
 
-    <div class="container mx-auto my-32 flex-1 rounded color-pureprimary">
-      <main class="flex-1 p-4 h-full w-auto shadow-rl">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolorem.
-
-        <p v-for="(item, index) in assignments">
-          {{item.title}}
-        </p>
-      </main>
+    <div class="container flex flex-col flex-1 gap-4 px-4 mx-auto my-32">
+      <div class="p-4 overflow-hidden rounded color-pureprimary">
+        <h1 class="text-xl font-bold text-center">Hej! Velkommen til mit studieweb 🤗</h1>
+        <p>Her kan du finde mine opgaver, afleveringer, logbog fra min skolegang på HTX Roskilde.</p>
+      </div>
+      <div class="p-4 overflow-hidden rounded color-pureprimary">
+        <h1 class="text-xl font-bold text-center">Hvem er jeg? 🤔</h1>
+        <p>Jeg er en 17 årig dreng der går på HTX Roskilde, med interresse for programmering og kunst.</p>
+        <p>På HTX ville jeg tage app og modeller studielinjen, hvor jeg skal lære videre med programming.</p>
+      </div>
     </div>
     </div>
 
 
-    <div v-if="assignments == null" class="color-pureprimary mx-auto my-48 h-48 w-80 shadow-lg rounded-lg p-8 text-center">
+    <div v-if="assignments == null" class="h-48 p-8 mx-auto my-48 text-center rounded-lg shadow-lg color-pureprimary w-80">
       <p class="font-bold text-md">Noget gik gruesomt galt!</p>
       <p>Hvis du ser dette, så kontakt mig med det samme.</p>
       <p class="mt-4">Lectio ID: Mathias Ransgaard Yde (Kappa 13)</p>
@@ -52,7 +54,7 @@
 
       assignments = JSON.parse(https.responseText);
     } catch {
-      console.log("Could not fetch assignments");
+      console.error("Could not fetch assignments");
     }
 
     new Vue({

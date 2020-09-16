@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="style/light_theme.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
+<body class="flex flex-col h-screen font-roboto color-textdark color-offprimary">
   <div id="root">
     <navigationbar></navigationbar>
     <div class="flex-1">
-      <div id="assignments-container" class="container mx-auto py-4 grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4">
-        <button @click="navigate(assignment['href'])" v-for="(assignment, index) in assignments" class="relative color-pureprimary h-64 rounded hover:shadow-lg transition-shadow duration-200">
-          <p class="absolute top-0 inset-x-0 mt-2 text-gray-500 text-sm">{{assignment.subject}}</p>
+      <div id="assignments-container" class="container grid grid-flow-row grid-cols-1 gap-4 py-4 mx-auto sm:grid-cols-2">
+        <button @click="navigate(assignment['href'])" v-for="(assignment, index) in assignments" class="relative h-64 transition-shadow duration-200 rounded color-pureprimary hover:shadow-lg">
+          <p class="absolute inset-x-0 top-0 mt-2 text-sm text-gray-500">{{assignment.subject}}</p>
 
           <p>{{assignment.title}}</p>
           <p class="text-sm text-gray-500">{{assignment.date}}</p>

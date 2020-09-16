@@ -1,9 +1,13 @@
 Vue.component("infocard", {
-  data: function () { return {} },
+  methods: {
+    onclick: function () {
+      console.log(this.$refs);
+    }
+  },
   template: `
-    <div class="rounded bg-white">
-      {{this.$root.$children}}
-      <p>gay</p>
+    <div ref="root" class="rounded bg-white">
+      <button @click="onclick">click</button>
+      {{this.$refs.children}}
     </div>
   `
 });

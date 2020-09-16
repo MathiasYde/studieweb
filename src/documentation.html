@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="style/light_theme.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body class="h-screen flex flex-col font-roboto color-textdark color-offprimary dark:bg-red-400">
+<body class="flex flex-col h-screen font-roboto color-textdark color-offprimary dark:bg-red-400">
   <div id="root">
     <navigationbar></navigationbar>
 
-    <div class="container mx-auto p-4 print:my-0 color-pureprimary">
-      <h1 class="font-bold text-xl">Dokumentation om min studieweb</h1>
+    <div class="container p-4 mx-auto print:my-0 color-pureprimary">
+      <h1 class="text-xl font-bold">Dokumentation om min studieweb</h1>
       <p>
         Jeg lavede denne studieweb site med motivationen at den skal være pæn og brugervenlig, samt velfunkerende og visse mine kompetencer med både design og kode.
       </p>
@@ -22,14 +22,14 @@
       <p>For det, så har jeg brugt Vuejs og TailwindCSS</p>
       
       <div class="flex mx-4"> 
-        <img class="flex-1 w-1/2 object-scale-down" src="./images/vuejs_logo.png">
-        <img class="flex-1 w-1/2 object-scale-down" src="./images/tailwindcss_logo.png">
+        <img class="flex-1 object-scale-down w-1/2" src="./images/vuejs_logo.png">
+        <img class="flex-1 object-scale-down w-1/2" src="./images/tailwindcss_logo.png">
       </div>
 
       <p>
         Vue er et framework til at hjælpe med at lave interaktive hjemmesider. For eksempel så kan vi hente noget data fra internettet og visse det på hjemmesiden
       </p>
-      <img class="rounded h-64 mx-auto" src="./images/codesnippet_vuedemo.png" alt="">
+      <img class="h-64 mx-auto rounded" src="./images/codesnippet_vuedemo.png" alt="">
       <p>
         Dette stykke kode ville hente metadata omkring mine opgaver fra min GitHub og så vise alle opgavers titler (Se billede)
       </p>
@@ -52,16 +52,16 @@
         Prøv at ændre på vinduets størrelse
       </p>
 
-      <div class="rounded mx-auto w-16 h-16 bg-red-600 sm:bg-green-600 md:bg-blue-600 lg:bg-purple-600"></div>
+      <div class="w-16 h-16 mx-auto bg-red-600 rounded sm:bg-green-600 md:bg-blue-600 lg:bg-purple-600"></div>
     
       <br>
       <p>Brikkens farve ændres ifølge med vinduets bredde, dette lades sig gøre med Tailwind's breakpoints.</p>
       <p>Idéen er man spefificere en egenskab og så overskriver man den hvis vinduets bredde bliver til en bestemt mængde pixels</p>
     
-      <img class="rounded mx-auto" src="images/codesnippet_colorchangingblock.png">
+      <img class="mx-auto rounded" src="images/codesnippet_colorchangingblock.png">
       
 
-      <h1 class="font-bold text-xl mt-16">Tankegang</h1>
+      <h1 class="mt-16 text-xl font-bold">Tankegang</h1>
       <p>Jeg har valgt at bruge en simple, men stadig dynamisk filstruktur der lader mig organisere sider i tilsvarende mapper</p>
       <img class="w-1/2 mx-auto" src="./images/site_structure.png">
       <p>Brugeren bliver præsenteret med en forside på index.html hvor der står lidt omkring mig og mit skoleværk. I navigation baren kan brugen navigere videre til andre sider.</p>

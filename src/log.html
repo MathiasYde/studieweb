@@ -11,15 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
-<body class="h-screen flex flex-col font-roboto color-textdark color-offprimary">
+<body class="flex flex-col h-screen font-roboto color-textdark color-offprimary">
   <div id="root">
     <div v-if="entries != null">
       <navigationbar></navigationbar>
 
       <div class="container mx-auto">
-        <div v-for="(entry, index) in entries" class="rounded my-4 p-4 color-pureprimary">
+        <div v-for="(entry, index) in entries" class="p-4 my-4 rounded color-pureprimary">
           <div class="flex justify-between">
-            <p class="font-bold text-xl">{{entry.title}}</p>
+            <p class="text-xl font-bold">{{entry.title}}</p>
             <p class="text-gray-500">{{entry.date}}</p>
           </div>
 
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div v-if="entries == null" class="color-pureprimary mx-auto my-48 h-48 w-80 shadow-lg rounded-lg p-8 text-center">
+    <div v-if="entries == null" class="h-48 p-8 mx-auto my-48 text-center rounded-lg shadow-lg color-pureprimary w-80">
       <p class="font-bold text-md">Noget gik gruesomt galt!</p>
       <p>Hvis du ser dette, så kontakt mig med det samme.</p>
       <p class="mt-4">Lectio ID: Mathias Ransgaard Yde (Kappa 13)</p>
