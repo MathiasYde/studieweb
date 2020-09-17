@@ -15,8 +15,9 @@
     <div v-if="assignments != null">
       <navigationbar></navigationbar>
       <div class="flex-1">
-        <div id="assignments-container" class="container px-4 sm:px-0 grid grid-flow-row grid-cols-1 gap-4 py-4 mx-auto"
-          v-bind:class="{'assignments.length == 1': 'grid-cols-1', 'assignments.length > 1': 'sm:grid-cols-2'}">
+        <div id="assignments-container" class="container grid grid-flow-row gap-4 px-4 py-4 mx-auto sm:px-0"
+        v-bind:class="[assignments.length > 1 ? 'grid-cols-2' : 'grid-cols-1']">
+
 
           <button @click="navigate(assignment['href'])" v-for="(assignment, index) in assignments"
             class="relative h-64 transition-shadow duration-200 rounded color-pureprimary hover:shadow-lg">
