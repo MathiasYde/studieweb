@@ -32,4 +32,14 @@
       "Læren viste os videoer om layout og komposition."
     ]
   }
+  ,
+  {
+    "date": "2020-09-17",
+    "title": "Usability tests",
+    "content": [
+      "Idag skulle vi protype et design til \"History of the World Wide Web\" dokumentet.",
+      "Idéen er at vi skulle teste hvis designet er godt og nemt at bruge.",
+      "Næste gang skal vi igang med digitale billeder, der handler om billede redigering, billede komprimering, hvordan billeder er konstrukeret i bits, hvor mange bits skal der til for at lave et billede osv."
+    ]
+  }
 ]
