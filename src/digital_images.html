@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="style/tailwind.css">
+  <link rel="stylesheet" href="style/light_theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body class="flex flex-col h-screen font-roboto color-textdark color-offprimary">
+  <div id="root">
+    <navigationbar></navigationbar>
+    <div class="container p-4 mx-auto print:my-0 color-pureprimary">
+      <h1 class="text-2xl font-bold">Billedets opbyggelse</h1>
+      <p>Et digitalt raster billede består af en to dimensionel liste af <b>pixels</b>, der til sammen beskriver et
+        billede.</p>
+      <p>En <b>pixel</b> består af tre farve kanaller. Rød, grøn og blå. Til sammen kan beskrive 16.8 millioner
+        farvekombinationer, hvis man bruger en bitdepth på en <b>byte</b>.</p>
+      <p>En <b>byte</b> består af 8 bits, der til sammen giver 256 forskellige kombinationer</p>
+
+      <div class="flex flex-col p-4">
+
+        <input type="range" min="0" max="255" v-model="bytevalue">
+
+        <div class="flex flex-row w-full p-4">
+          <span v-for="index in 8" class="flex items-center justify-center w-full h-full py-4 text-center border"
+            v-text="bytes[index-1]"></span>
+        </div>
+
+        <div class="flex flex-row w-full">
+          <span v-for="index in 8" class="flex items-center justify-center w-full h-full text-center">&dot;</span>
+        </div>
+
+        <div class="flex flex-row w-full p-4">
+          <span v-for="index in 8"
+            class="flex items-center justify-center w-full h-full py-4 text-center border">{{2**(-index+8)}}</span>
+        </div>
+
+        <div class="flex flex-row w-full">
+          <span v-for="index in 8" class="flex items-center justify-center w-full h-full text-center">=</span>
+        </div>
+
+        <div class="flex flex-row w-full p-4">
+          <span v-for="index in 8"
+            class="flex items-center justify-center w-full h-full py-4 text-center border">{{2**(-index+8) * bytes[index-1]}}</span>
+        </div>
+
+        <span>Summeret numærisk værdi: {{bytevalue}}</span>
+
+        <h1 class="text-lg font-bold">Eiffel tårn billede</h1>
+        <div class="flex justify-center w-full mx-auto"></div>
+        <img src="images/balloon-eiffel-tower.jpg" class="w-1/2 mx-auto" alt="">
+      </div>
+
+      <h1 class="text-lg font-bold">Billedet redigeringsprocess</h1>
+      <p>Her er der en lille video er viser hvordan jeg har redigeret mit eiffel tårn billede.</p>
+
+      <div class="flex justify-center w-full mx-auto">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XOKkEF7Jbzw" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <script src="./lib/vue.js"></script>
+  <script src="components/navigation_bar.js"></script>
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        bytevalue: 0,
+
+      },
+      computed: {
+        bytes: function () {
+          return parseInt(this.bytevalue).toString(2).padStart(8, "0")
+        }
+      }
+
+    })
+  </script>
+</body>
+
+</html>
+<!-- 
+
+En pixel kan forklares som en firkant på en skærm der består af en rød, grøn og blå farve kanal. På en skærm med 8 bitdybte, bliver der brugt 8 bits per farve kanal per pixel. En byte består af 8 bits dér til sammen 
+
+ 
+ 
+(768·576·24)/8=1327104
+Denne billede fil’s teoriske filstørrelse burde være 1328104 bytes. Windows Explorer rapporterer dog at filen fylder 1327226 bytes på disken.
+ 
+Det er ikke helt det samme, der er en forskel på 878 bytes. Dette kan skyldes for metadata. Det er data der fortæller computeren om noget andet data. Dette kan for eksempel være hvor mange bits per pixel per farve kanel billedet bruger, hvor og hvornår billedet er lavet, hvem der har lavet billedet, skrive/læse adgang, ekstra syntaks data osv.
+
+Det ville tage omkring 10.61 sekunder på en 1 Megabit / sekundet fordi
+(1327226·8)/1000000≈10,61781 -->
