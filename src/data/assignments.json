@@ -7,10 +7,10 @@
 		"href": "digital_images.html"
 	},
 	{
-		"title": "Test Assignment 2",
-		"description": "This assignment is a test",
-		"date": "2020 17 SEP",
-		"subject": "Mathematics",
-		"href": "not_found.html"
+		"title": "Social Media Markup",
+		"description": "We've made markup prototypes for an imaginary social media website",
+		"date": "2020 26 NOV",
+		"subject": "Informatics",
+		"href": "assignments/informatics_socialmedia/signup.html"
 	}
 ]
