@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/tailwind.css">
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+  <div class="container flex h-full mx-auto bg-white">
+    <div class="w-full px-16">
+      <div>
+        <p>String</p>
+        <input id="string-input" class="w-full p-1 border rounded shadow" type="text" name="" id="">
+      </div>
+      <div>
+        <p>Key</p>
+        <input id="salt-input" class="w-full p-1 border rounded shadow" type="text" name="" id="">
+      </div>
+      <div class="h-12"></div>
+      <button id="encrypt-button" class="w-full h-8 mb-4 bg-blue-300 rounded-md">Encrypt</button>
+
+      <span>Encrypted value: </span>
+      <span id="encrypted-value" class="break-words"></span>
+
+      <div class="h-12"></div>
+      <div>
+        <p>Key</p>
+        <input id="decrypt-salt-input" class="w-full p-1 border rounded shadow" type="text" name="" id="">
+      </div>
+      <div class="h-4"></div>
+      <button id="decrypt-button" class="w-full h-8 mb-4 bg-blue-300 rounded-md">Decrypt</button>
+      <span>Decrypted value: </span>
+      <span id="decrypted-value"></span>
+    </div>
+  </div>
+  <script>
+    let encryptButton = document.getElementById("encrypt-button");
+    let encryptstringinput = document.getElementById("string-input");
+    let encryptsaltinput = document.getElementById("salt-input");
+    let encryptedvalue = document.getElementById("encrypted-value")
+
+    encryptButton.addEventListener("click", () => {
+      value = "";
+
+      for (let i = 0; i < encryptstringinput.value.length; i++) {
+        for (let j = 0; i < encryptstringinput.value.length - encryptsaltinput.value.length; j++) {
+          encryptsaltinput.value += encryptsaltinput.value[j];
+        }
+
+        string = parseInt(encryptstringinput.value[i].charCodeAt(0).toString(2));
+        salt = parseInt(encryptsaltinput.value[i].charCodeAt(0).toString(2));
+        value += string ^ salt;
+      }
+      
+      encryptedvalue.innerHTML = value;
+    });
+    
+    let decryptButton = document.getElementById("decrypt-button");
+    let decryptsaltinput = document.getElementById("decrypt-salt-input");
+    let decryptedvalue = document.getElementById("decrypted-value");
+    decryptButton.addEventListener("click", () => {
+      let value = "";
+      for (let i = 0; i < decryptsaltinput.value.length; i++) {
+        string = parseInt(encryptedvalue.innerHTML[i].charCodeAt(0).toString(2));
+        salt = parseInt(decryptsaltinput.value[i].charCodeAt(0).toString(2));
+        value += (string ^ salt).toString();
+      }
+      decryptedvalue.innerHTML = value;
+    });
+
+    </script>
+</body>
+
+</html>
