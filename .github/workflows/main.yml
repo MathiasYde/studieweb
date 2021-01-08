@@ -17,4 +17,3 @@ jobs:
         log-level: verbose
         protocol: ftps
         port: 21
-        server-dir: 2020/mathiasry20/
