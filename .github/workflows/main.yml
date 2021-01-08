@@ -15,5 +15,6 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         log-level: verbose
+        local-dir: ./src/
         protocol: ftps
         port: 21
