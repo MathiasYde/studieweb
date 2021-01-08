@@ -6,17 +6,123 @@
   <title>Document</title>
   <link rel="stylesheet" href="style/tailwind.css">
 </head>
-<body>
-  <div class="container flex flex-col mx-auto">
-    <section>
-      børneporno
-    </section>
-    <section class="flex flex-col">
-      <div class="w-1/2 mx-auto border">
+<body class="flex flex-col">
+  <noscript>go use a better browser. you idiot</noscript>
+
+  <header>
+    <nav class="flex justify-between h-14">
+      <a class="flex w-32 my-1 ml-1" href="#forside">
+        <img src="images/logo-sm.svg" alt="Børns Vilkår">
+      </a>
+      <ul class="flex flex-row space-x-4">
+        <li class="flex items-center">
+          <a class="p-2 my-2 transition duration-200 rounded hover:shadow" href="#">
+            Råd til online adfærd
+          </a>
+        </li>
         
-        rawr xd
+        <li class="flex items-center">
+          <a class="p-2 my-2 transition duration-200 rounded hover:shadow" href="#">
+            bruh
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a class="p-2 my-2 transition duration-200 rounded hover:shadow" href="#">
+            bruh
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="relative h-64 overflow-hidden text-white">
+    <img class="absolute inset-0 object-cover w-full h-full " src="images/teens-kids-chat-text-messaging-ss-1920-800x510.jpg" alt="young adults on their phone" style="filter: blur(1px) brightness(60%);">
+    <div class="container absolute inset-0 flex flex-col justify-center px-8 mx-auto">
+      <p class="mx-auto text-4xl font-bold">SoMe</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur perspiciatis amet temporibus dolor at minima veritatis voluptas sint quod in, modi, inventore ea quidem repellendus consectetur vitae nostrum. Quia, cupiditate.</p>
+    </div>
+  </section>
+
+
+  <div class="mt-32"></div>
+  <section id="need-help-section" class="container flex flex-col items-center p-8 mx-auto shadow-lg opacity-0 sm:w-1/2">
+    <p class="text-2xl font-bold">Har du brug for hjælp?</p>
+    <p>Er du blevet udsat for digital mobning eller seksuel krænkelse?</p>
+
+    <div class="flex flex-col items-center mt-8">
+      <p>Ring eller skriv til Børnetelefonen på 11611</p>
+      <p>Det er gratis og anonymt</p>
+    </div>
+
+    <a class="w-3/4 p-4 mt-4 text-center text-white rounded w-100" href="#lær-mere" style="background: #F05141;">
+      Lær mere
+    </a>
+  </section>
+
+  <section class="container px-8 mx-auto">
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est enim velit animi sapiente et repellat ab eaque odit perspiciatis inventore veritatis id mollitia aperiam quae vel quod vitae, unde iste consequuntur maiores tempora debitis saepe. Alias vero nobis tempore aliquid libero, perspiciatis iusto autem commodi repudiandae architecto debitis animi deserunt adipisci magni voluptate, reprehenderit ipsum eligendi. At nulla molestiae saepe?</span>
+  </section>
+
+  <div class="container flex flex-col mx-auto">
+    
+    <section class="flex flex-col justify-items-stretch">
+      <div class="mx-auto space-y-4 sm:w-1/2">
+        <p class="p-4 text-4xl font-bold text-center">Hvad gør du her?</p>
+        <img class="w-5/6 mx-auto sm:w-11/12 md:w-6/12" src="images/dilemma_001.png">
+        <div class="flex flex-col items-stretch w-3/4 mx-auto space-y-4">
+          <button id="dilemma1-button1" class="p-4 border rounded-lg shadow">Ja, jeg har flere</button>
+          <button id="dilemma1-button2" class="p-4 border rounded-lg shadow">Jeg siger det til min mor</button>
+        </div>
+        <div id="dilemma1-box1" class="hidden p-4 mx-4 text-xl text-white bg-green-500 rounded">
+          <p class="font-bold text-md">Du har valgt at sige nej til manden</p>
+          <p>Du nægter at sende manden dine billeder og siger det til en voksen, der hjælper dig med at anmelde manden til politiet.</p>
+          <br>
+          <p>Manden bliver dermed arresteret for porno fra flere børn.</p>
+
+        </div>
+        <div id="dilemma1-box2" class="hidden p-4 mx-4 text-xl text-white bg-red-500 rounded">
+          <p class="font-bold text-md">Du har valgt at dele flere billeder med den fremmede mand</p>
+          <p>Du sender et billede eller to til manden, hvor derefter han spørger om flere billeder.</p>
+          <p>Hvis du ikke sender ham flere billeder, så ville han uploade dine nøgen billeder til offentligheden.</p>
+          <p>I skræk, så sender du ham bare flere billeder og ikke siger det til en voksen der kan hjælpe dig.</p>
+          <br>
+          <p>Manden har altså <b>blackmail</b> på dig.</p>
+        </div>
       </div>
     </section>
+
+    <div class="h-64"></div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    function dilemmaChoice(button1, button2, box1, box2) {
+      button1.addEventListener("click", () => {
+        box1.classList.add("hidden")
+        box2.classList.remove("hidden")
+      })
+      button2.addEventListener("click", () => {
+        box2.classList.add("hidden")
+        box1.classList.remove("hidden")
+      })
+    }
+
+    dilemmaChoice(
+      document.getElementById("dilemma1-button1"),
+      document.getElementById("dilemma1-button2"),
+      document.getElementById("dilemma1-box1"),
+      document.getElementById("dilemma1-box2"),
+    )
+
+    gsap.to("#need-help-section", {
+      scrollTrigger: "#need-help-section",
+      y: -100,
+      opacity: 1.0,
+      duration: 2,
+    })
+  </script>
 </body>
 </html>
