@@ -14,3 +14,4 @@ jobs:
         server: elev.htxroskilde.dk
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
+        log-level: verbose
