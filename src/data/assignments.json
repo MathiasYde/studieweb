@@ -12,5 +12,12 @@
 		"date": "2020 26 NOV",
 		"subject": "Informatics",
 		"href": "assignments/informatics_socialmedia/signup.html"
+	},
+	{
+		"title": "SoMe website",
+		"description": "Social Media website for Informatics and Danish",
+		"date": "2020 14 DEC",
+		"subject": "Danish & Informatics",
+		"href": "assignments/some_website/index.html"
 	}
 ]
