@@ -4,20 +4,27 @@
 		"description": "",
 		"date": "2020 19 OCT",
 		"subject": "Kommunikation IT",
-		"href": "digital_images.html"
+		"href": "assignments/digital_images.html"
 	},
 	{
 		"title": "Social Media Markup",
 		"description": "We've made markup prototypes for an imaginary social media website",
 		"date": "2020 26 NOV",
-		"subject": "Informatics",
+		"subject": "Informatik",
 		"href": "assignments/informatics_socialmedia/signup.html"
 	},
 	{
 		"title": "SoMe website",
 		"description": "Social Media website for Informatics and Danish",
 		"date": "2020 14 DEC",
-		"subject": "Danish & Informatics",
+		"subject": "Dansk & Informatik",
+		"href": "assignments/some_website/index.html"
+	},
+	{
+		"title": "Usability",
+		"description": "Things I learned about usability in websites",
+		"date": "2020 14 DEC",
+		"subject": "Kommunikation IT",
 		"href": "assignments/some_website/index.html"
 	}
 ]
