@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Konsekvenser</title>
   <link rel="stylesheet" href="style/tailwind.css">
 </head>
+
 <body class="flex flex-col">
   <noscript>go use a better browser. you idiot</noscript>
-  
+
   <header>
     <nav class="flex justify-between h-14">
-      <a class="flex w-32 my-1 ml-1" href="#forside">
+      <a class="flex w-32 my-1 ml-1" href="index.html">
         <img src="images/logo-sm.svg" alt="Børns Vilkår">
       </a>
       <ul class="flex flex-row space-x-4">
@@ -20,10 +22,10 @@
             Råd til online adfærd
           </a>
         </li>
-        
+
         <li class="flex items-center">
           <a class="p-2 my-2 text-center transition duration-200 rounded hover:shadow" href="konsekvenser.html">
-            bruh
+            Konsekvenser
           </a>
         </li>
         <li class="flex items-center">
@@ -35,11 +37,77 @@
     </nav>
   </header>
 
-  <section class="flex flex-row">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptatum pariatur provident deserunt sunt optio ex veritatis quos explicabo architecto! Aperiam sed odit earum debitis recusandae numquam vero sequi in.
-    <aside>
-      <img src="images/judge.svg" alt="" srcset="">
-    </aside>
+  <section class="relative h-64 overflow-hidden text-white">
+    <img class="absolute inset-0 object-cover w-full h-full " src="images/Politi_uniform_bredformat.jpg"
+      alt="young adults on their phone" style="filter: blur(1px) brightness(60%);">
+    <div class="container absolute inset-0 flex flex-col justify-center px-8 mx-auto text-center">
+      <p class="mx-auto text-4xl font-bold">Konsekvenser</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, sequi dolores eos eaque ut praesentium
+        ratione sunt culpa deserunt! Praesentium a voluptatum voluptatibus, amet id reprehenderit provident minima
+        officiis molestias.
+      </p>
+    </div>
   </section>
+
+  <section class="container flex flex-col p-4 mx-auto">
+    <p>Hvad siger loven?</p>
+    <div id="sharing-of-child-pornography" class="flex flex-row p-4 mt-16 rounded opacity-0 ring-4 ring-red-600">
+      <div class="flex flex-col flex-1">
+        <p class="text-2xl font-bold">Deling af Børneporno: Straffeloven §235</p>
+        <span>
+          Den, som udbreder pornografiske fotografier eller film, andre pornografiske visuelle gengivelser eller
+          lignende af personer under 18 år, straffes med bøde eller fængsel indtil 2 år eller under særligt
+          skærpende omstændigheder med fængsel indtil 6 år.
+        </span>
+        <span>
+          Som særligt skærpende omstændigheder anses navnlig tilfælde, hvor barnets liv udsættes for fare, hvor der
+          anvendes grov vold, hvor der forvoldes barnet alvorlig skade, eller hvor der er tale om udbredelse af mere
+          systematisk eller organiseret karakter.
+        </span>
+        <span>
+          Stk. 2. Den, som besidder eller mod vederlag eller gennem internettet eller et lignende system til
+          spredning af information gør sig bekendt med pornografiske fotografier eller film, andre pornografiske
+          visuelle gengivelser eller lignende af personer under 18 år, straffes med bøde eller fængsel indtil 1
+          år.
+        </span>
+        <span>
+          Stk. 3. Bestemmelsen i stk. 2 omfatter ikke besiddelse af fotografier, film el.lign. af en person, der
+          er fyldt 15 år, hvis den pågældende samtykker i besiddelsen.
+        </span>
+      </div>
+      <img class="hidden h-80 md:block" src="images/judge.svg">
+    </div>
+  </section>
+  <section class="container mx-auto">
+    <div class="text-center">
+      <p class="text-2xl font-bold">Okay, men hvad betyder det lige?</p>
+      <p class=>Jo altså, det betyder at hvis du deler pornografiske materiale af unge under 18 år, billeder eller videoer kan du...</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 px-8 md:grid-cols-2">
+      <div class="p-4 bg-gray-200 rounded">
+        <p class="font-bold text-center text-md">Du kan komme i fængsel</p>
+        <span>Du risikere at komme i fængsel i 2 år, og i særlige omstændigheder 6 år.</span>
+      </div>
+      <div class="p-4 bg-gray-200 rounded">
+        <p class="font-bold text-center text-md">Du kan komme i fængsel</p>
+        <span>Du risikere at komme i fængsel i 2 år, og i særlige omstændigheder 6 år.</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#sharing-of-child-pornography", {
+      scrollTrigger: "#sharing-of-child-pornography",
+      y: -50,
+      opacity: 1.0,
+      duration: 2
+    });
+  </script>
 </body>
+
 </html>
